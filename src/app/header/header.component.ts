@@ -11,9 +11,14 @@ export class HeaderComponent implements OnInit {
   	this.selected.emit(feature);
   }
 
+  toggleState = "collapse"
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onHamburgerClick() {
+    this.toggleState === "collapse" ? this.toggleState = "default" : this.toggleState = "collapse";
+  }
 }

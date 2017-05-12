@@ -10,4 +10,6 @@ export class AppComponent {
   onSelected(feature) {
     this.loadedFeature = feature;
   }
+
+
 }
