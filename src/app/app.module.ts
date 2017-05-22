@@ -17,6 +17,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
+import { RecipeDbService } from './shared/recipedb.service';
 
 
 const appRoutes: Routes = [
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, RecipeDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

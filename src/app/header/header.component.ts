@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeDbService } from '../shared/recipedb.service';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  toggleState = "collapse"
+  toggleState = "collapse";
 
-  constructor() { }
+  constructor(private recipeDbService: RecipeDbService) { }
 
   ngOnInit() {
   }
 
   onHamburgerClick() {
     this.toggleState === "collapse" ? this.toggleState = "default" : this.toggleState = "collapse";
+  }
+
+  onSave() {
+    this.recipeDbService.saveRecipe().subscribe(
+      (response: Response ) =>{ console.log(response); }
+    );
+  }
+  
+  onFetch() {
+    this.recipeDbService.fetchRecipe();
   }
 }
