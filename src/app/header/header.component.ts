@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeDbService } from '../shared/recipedb.service';
 import { Response } from '@angular/http';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   toggleState = "collapse";
 
-  constructor(private recipeDbService: RecipeDbService) { }
+  constructor(private recipeDbService: RecipeDbService, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -29,4 +30,10 @@ export class HeaderComponent implements OnInit {
   onFetch() {
     this.recipeDbService.fetchRecipe();
   }
+
+  onSignout() {
+    this.authService.signoutUser();
+  }
+  
+  
 }
