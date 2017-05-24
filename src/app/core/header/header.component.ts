@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeDbService } from '../shared/recipedb.service';
+import { RecipeDbService } from '../../shared/recipedb.service';
 import { Response } from '@angular/http';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
