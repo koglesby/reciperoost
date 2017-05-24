@@ -1,50 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { Routes, RouterModule } from '@angular/router';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipeDbService } from './shared/recipedb.service';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { AuthModule } from './auth/auth.module';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
-  { path: 'shopping-list', component: ShoppingListComponent},
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent }
+  { path: 'shopping-list', component: ShoppingListComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    SignupComponent,
-    SigninComponent
+    HeaderComponent
   ],
   imports: [
+    AuthModule,
     BrowserModule,
-    FormsModule,
     HttpModule,
     RecipesModule,
+    ShoppingListModule,
     RouterModule.forRoot(appRoutes),
     SharedModule
   ],
