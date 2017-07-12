@@ -8,7 +8,7 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ngModel class="form-control">
-        <span *ngIf="passwordRequired">Password Should be at least 6 characters</span>
+        <span *ngIf="passwordRequired">Wrong Email or Password</span>
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign In</button>
     </form>
