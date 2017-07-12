@@ -1,5 +1,9 @@
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <span class="validation" [hidden]="!passwordRequired">
+      <div>{{passwordRequired}}</div>
+      <br/>
+    </span>
     <form (ngSubmit)="onSignup(f)" #f="ngForm">
       <div class="form-group">
         <label for="email">Mail</label>
@@ -8,7 +12,6 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ngModel class="form-control">
-        <span *ngIf="passwordRequired">Password Should be at least 6 characters</span>
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign Up</button>
     </form>

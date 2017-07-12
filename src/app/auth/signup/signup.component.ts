@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Subscription } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-signup',
@@ -9,23 +10,22 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  passwordRequired = false;
-  
+  passwordRequired: any = false;
+  private subscription: Subscription;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-
+    this.subscription = this.authService.errmessage.subscribe(
+      (errmessage) => {
+        this.passwordRequired = errmessage;
+      }
+    )
   }
 
   onSignup(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signupUser(email, password);
-    if (password.length < 6) {
-      this.passwordRequired = true;
-    } else {
-      this.passwordRequired = false;
-    }
   }
 
 }
