@@ -21,7 +21,7 @@ export class RecipeService {
     	]),
     new Recipe('Double Mack Burger',
       'A classic double cheeseburger',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Aloo_chat_Recipe.JPG/1280px-Aloo_chat_Recipe.JPG',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Big_Mac_hamburger.jpg',
       [
         new Ingredient('Beef Patty', 2),
         new Ingredient('Special Sauce', 1),
