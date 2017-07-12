@@ -9,27 +9,37 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 	private recipes: Recipe[] = [
     new Recipe(
-    	'Test Recipe',
-    	'A tasty test',
-    	'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Aloo_chat_Recipe.JPG/1280px-Aloo_chat_Recipe.JPG',
+    	'Spaghetti',
+    	'Tasty recipe for spaghetti and meatballs.',
+    	'https://c1.staticflickr.com/2/1243/824608884_c02e6978bd_b.jpg',
     	[
-        new Ingredient('Milk', 2),
-        new Ingredient('Cereal', 1)
+        new Ingredient('Spaghetti', 1),
+        new Ingredient('Meatball', 5),
+        new Ingredient('Tomato', 3),
+        new Ingredient('Basil', 1),
+        new Ingredient('Parmesan', 1)
     	]),
-    new Recipe('Different Test Recipe',
-      'this is a different test, yumm',
+    new Recipe('Double Mack Burger',
+      'A classic double cheeseburger',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Aloo_chat_Recipe.JPG/1280px-Aloo_chat_Recipe.JPG',
       [
-        new Ingredient('Meat', 3),
-        new Ingredient('Fries', 12)
+        new Ingredient('Beef Patty', 2),
+        new Ingredient('Special Sauce', 1),
+        new Ingredient('Lettuce', 1),
+        new Ingredient('Cheese', 1),
+        new Ingredient('Pickle', 2),
+        new Ingredient('Onion', 2),
+        new Ingredient('Sesame-seed bun', 1)
       ]),
     new Recipe(
-    	'Test Wooo Recipe',
-    	'Wooooo!',
-    	'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Aloo_chat_Recipe.JPG/1280px-Aloo_chat_Recipe.JPG',
+    	'Grilled Cheese Sandwhich',
+    	'A simple, quick and easy recipe.',
+    	'https://upload.wikimedia.org/wikipedia/commons/8/89/Grilled_cheese_sandwich.jpg',
     	[
-    	  new Ingredient('Cheese', 2),
-    	  new Ingredient('Lobster', 1)
+    	  new Ingredient('Bread slice', 2),
+    	  new Ingredient('Cheddar cheese', 1),
+        new Ingredient('Shredded Mozzarella', 2),
+        new Ingredient('Butter', 1)
     	])
 
   ];
